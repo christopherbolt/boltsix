@@ -1,0 +1,463 @@
+/* default background */
+body,html {
+	min-height: 100%;
+	height: auto;
+}
+body {
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	text-size-adjust:none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.5em;
+}
+/* new default font */
+* {
+	font-family: 'Rubik',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+h1,div.header-lined h1 {
+	font-weight: 300;
+}
+.panel-sidebar .panel-title {
+	font-weight: normal;
+}
+
+/* New default font size */
+.main-content, .main-content blockquote {
+	font-size: 14px;	
+}
+/*.sidebar {
+	font-size: 16px;	
+}*/
+
+/* Make the KB article font size the same as everywhere else */
+.kb-article-content {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.5em;
+}
+
+/* HEADER */
+section#header {
+	padding-top: 0;	
+	padding-bottom: 16px;
+	background-color: #02334e;
+}
+section#header > .container {
+	padding-top: 24px;
+}
+#header img {
+	max-width: 100%;
+	height: auto;
+}
+ul.top-nav {
+	margin-top: 9px;
+	margin-bottom: 6px;
+	margin-left: 9px;
+}
+ul.top-nav>li>a {
+	color: #9fc3da;
+}
+ul.top-nav>li>a:hover {
+	color: #fff;
+}
+ul.top-nav>li.primary-action {
+	border-left: 1px solid #9fc3da;
+}
+/*@media (min-width: 770px) {
+	#top-nav {
+		min-width: 308px;
+		min-height: 100px;
+		background: url(../img/online.png) bottom right / 308px 22px no-repeat;	
+	}
+}
+@media (min-width: 770px) and (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (min-resolution: 1.3dppx) {
+	#top-nav {
+		background-image: url(../img/online-retina.png);
+	}
+}*/
+
+/* Bolt header bar at top with phone number and company back links */
+#boltheader {
+	position: relative;
+	font-size: 11px;
+	background-color: #f8f9fa;
+}
+#boltheader {
+	padding: 12px 0 0 0;
+	color: #6794b2;
+}
+#contact {
+	/*position: absolute;
+	top: 16px;
+	left: 0;
+	width: 400px;
+	font-size: 11px;*/
+	float: right;
+	margin-bottom: 12px;
+}
+#toplinks {
+	float: left;
+	text-transform: uppercase;
+	font-size: 11px;
+	color: #555;
+	margin-bottom: 12px;
+}
+.clear {
+	clear: both;	
+}
+
+/* Mobile over-rides for headers */
+@media (max-width: 640px) {
+	section#header {
+		text-align: center;
+	}
+	ul.top-nav {
+		margin-top: 0;
+		margin-bottom: 24px;
+		float: none;
+	}
+	/* Bolt header */
+	#toplinks {
+		float: none;
+	}
+	#contact {
+		float: none;
+	}
+}
+
+/* Navigation bar */
+section#main-menu {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 99;
+}
+
+/* FOOTER */
+
+/* override default footer */
+section#footer p {
+	margin: 0 0 0.5em 0;
+    border-top: 0;
+    line-height: 150%;
+    color: inherit;
+   	font-size: 10px;
+    text-align: center;
+}
+section#footer p.footerpricing {
+	font-size: 11px;	
+}
+
+#bmfooter {
+	text-align: center;
+	padding-top: 16px;
+}
+
+/* christopherbolt.com footer */
+#cbfooter {
+	clear: both;
+	margin-top: 16px;
+	border-top: 3px solid #f5f9fb;
+	padding-top: 27px;
+	/*background-color: #ffffff;*/
+	
+	font-size: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	
+	padding-bottom: 30px;
+}
+
+section#footer {
+	padding-bottom: 30px;
+}
+
+/* COLORS */
+section#main-menu,
+.navbar-main,
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus,
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus,
+.navbar-main .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+	/*background-color: #00324d;*/
+	background-color: #045f91;
+	border-color: #006687;
+}
+.text-domain {
+	color: #00324d;	
+}
+
+/* HOME PAGE */
+@media (min-width: 770px) {
+	.home-shortcuts li {
+		width: 20%;
+	}
+}
+
+/* home page icons */
+ul.homeIcons {
+	margin: 20px 0 20px;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+ul.homeIcons li {
+	display: inline-block;
+	width: 49%;
+	vertical-align: bottom;
+	margin: 20px 0;
+}
+
+ul.homeIcons li a.fa {
+	display: block;
+	color: #2e363f;
+	font-size: 60px;
+	text-decoration: none !important;
+}
+@media (min-width: 770px) {
+	ul.homeIcons {
+		margin-left: 8%;	
+	}
+	ul.homeIcons li {
+		text-align: left;
+	}
+	ul.homeIcons li strong {
+		display: inline-block;
+		margin-top: 5px;	
+	}
+	ul.homeIcons li a.fa {
+		float: left;	
+		width: 86px;
+		text-align: center;
+	}
+}
+@media (max-width: 769px) {
+	ul.homeIcons li {
+		width: 100%;	
+		text-align: center;
+	}
+	ul.homeIcons li a.fa {
+		font-size: 50px;
+	}
+}
+
+/* home knowledgebase search */
+section#home-banner {
+	position: relative;
+	/*background: #045f91 url(../img/banner.jpg) center / cover no-repeat;*/
+	background: #343a40;
+	/*background: #045f91;
+	border-top: 1px solid #537ea4;
+	background-blend-mode: multiply;*/
+}
+section#home-banner:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left 0;
+	/*background: rgba(4,61,95,.25);
+	background: rgba(52,58,64,.25);*/
+}
+section#home-banner .container {
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+section#home-banner h2 {
+	/*text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);*/
+}
+section#home-banner .input-group {
+	border: 4px solid #999;
+}
+
+/* NEW FOOTER */
+footer.boltFooter {
+	line-height: 1.3em;
+}
+footer.boltFooter .small {
+	font-size: 11px;
+}
+footer.boltFooter .justify-content-center > div {
+	margin-left: auto;
+	margin-right: auto;
+    float: none;
+	/*display: inline-block;*/
+}
+footer.boltFooter .py-4 {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+footer.boltFooter .mb-1 {
+	margin-bottom: 0.1em;
+}
+footer.boltFooter hr {
+    opacity: 0.2;
+}
+footer.boltFooter .row.pt-4 {
+    margin-top: 4em;
+}
+.bg-secondary {
+	background-color: #e9ecef;
+}
+.footer-long {
+	font-size: .875rem;
+	padding: 4.5rem 0 7.5rem 0;
+	padding-bottom: 4em;
+	background: #343a40;
+}
+.footer-long.text-light .text-muted {
+	/*color: rgba(255, 255, 255, 0.75) !important*/
+	color: #adb5bd;
+}
+.footer-long a {
+	color: #adb5bd;
+}
+.footer-long a:hover {
+	color: #fff;
+}
+.footer-long.bg-dark p {
+	color: #adb5bd;
+}
+.footer-long i.fa {
+	width: 1.5em;
+}
+@media (max-width: 768px) {
+	.footer-long * {
+		text-align: center !important;
+	}
+}
+.footer-logo {
+	width: 80%;
+	height: auto;
+	max-width: 400px;
+}
+p.footer-services {
+	margin-bottom: 0;
+}
+.footer-services a {
+	white-space: nowrap;
+}
+.footer-services a:after {
+	content: '\2022';
+	display: inline-block;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+}
+.footer-services a:last-child:after {
+	display: none;
+}/*
+@media (min-width: 992px) {
+	.footer-services a {
+		font-size: 0.96em;
+	}
+}*/
+.footer-nz {
+	float: right;
+	width: 20%;
+	height: auto;
+	margin-top: -5%;
+	max-width: 80px;
+}
+@media (max-width: 1199px) {
+	.footer-nz {
+		display: none;
+	}
+}
+.footer-legal {
+	margin-top: 1em;
+}
+.footer-legal a, .footer-legal span {
+	white-space: nowrap;
+}
+.footer-legal a:after, .footer-legal span:after {
+	content: '|';
+	display: inline-block;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.footer-legal a:last-child:after, .footer-legal span:last-child:after {
+	display: none;
+}
+
+/** order form overrides */
+#order-premium_comparison .alert {
+	margin: 1em 0 !important;
+}
+/* BNZ compliance */
+#paymentGatewaysContainer:after {
+	text-align: center;
+	content: 'Your account will be charged in NZD';
+	font-weight: bold;
+	display: block;
+	margin-top: 1em;
+}
+
+/* the SSL upsell is too intrusive */
+#frmCheckout .symantec-upsell-ssl {
+	display: none;
+}
+.panel-promo-ssl {
+    display: none;
+}
+
+/* Make the continue button stand out more */
+#btnCompleteProductConfig.btn-primary {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+#btnCompleteProductConfig.btn-primary:hover {
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+/* BoltHost comparison template */
+/*#order-premium_comparison .price-table-container ul li {
+	padding: 30px 6px 5px 6px !important;
+}
+#order-premium_comparison .price-table-container .price-table {
+	width: 258px !important;
+	min-width: 258px !important;
+}*/
+
+/* BoltMail list cart template */
+#order-boltmail_list #products table {
+	border-top: 1px solid #ddd;
+	margin: 2em 0;
+	max-width: 600px;
+}
+#order-boltmail_list #products table * {
+	transition: all .3s ease;
+}
+#order-boltmail_list #products table tr:hover {
+	background: #efefef;
+}
+#order-boltmail_list #products table td {
+	border-bottom: 1px solid #ddd;
+	vertical-align: top;
+	padding: 10px 5px;
+}
+#order-boltmail_list #products table td:first-child {
+	padding-left: 0;
+}
+#order-boltmail_list #products table td:last-child {
+	padding-right: 0;
+}
+#order-boltmail_list #products table td.product-name {
+	width: 60%;
+}
+#order-boltmail_list #products table td.product-name h4, #order-boltmail_list #products table td.product-name p, #order-boltmail_list #products table td.product-name ul {
+	margin: 0;
+}
+#order-boltmail_list #products table td.product-price {
+	white-space: nowrap;
+}
+#order-boltmail_list #products table td.product-price span.price {
+	font-weight: bold;	
+}
+#order-boltmail_list #products table td.product-order {
+	width: 96px;
+	text-align: right;
+}

@@ -17,7 +17,8 @@
             <div class="announcement-single">
                 <h3>
                     <span class="label label-default">
-                        {$carbon->translatePassedToFormat($announcement.rawDate, 'M jS')}
+                        <!-- chris bolt changed date format to d/m/y -->
+                        {$carbon->translatePassedToFormat($announcement.rawDate, 'd/m/y')}
                     </span>
                     <a href="{routePath('announcement-view', $announcement.id, $announcement.urlfriendlytitle)}">{$announcement.title}</a>
                 </h3>

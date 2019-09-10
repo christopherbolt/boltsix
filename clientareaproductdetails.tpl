@@ -91,6 +91,14 @@
                             <h4>{$LANG.suspendreason}</h4>
                             {$suspendreason}
                         {/if}
+                        
+                        {* Chris Bolt, added a more prominent download button *}
+                        {if count($downloads)}
+                            <p><br>
+                                <a onclick="jQuery('#Primary_Sidebar-Service_Details_Overview-Downloads').click(); return false;" href="clientarea.php?action=productdetails&amp;id={$id}#tabDownloads" class="btn btn-default"><i class="fas fa-download"></i> Downloads</a>
+                            </p>
+                        {/if}
+                        {* End Chris Bolt *}
 
                     </div>
                 </div>

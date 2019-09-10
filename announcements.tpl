@@ -29,7 +29,8 @@
 
         <div class="article-items">
             <i class="fas fa-calendar-alt fa-fw"></i>
-            {$carbon->createFromTimestamp($announcement.timestamp)->format('jS M Y')}
+            <!-- Chris Bolt, changed date format to d/m/y -->
+            {$carbon->createFromTimestamp($announcement.timestamp)->format('d/m/y')}
             {if $announcement.editLink}
                 <a href="{$announcement.editLink}" class="admin-inline-edit">
                     <i class="fas fa-pencil-alt fa-fw"></i>

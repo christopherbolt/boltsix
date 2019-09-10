@@ -1,3 +1,7 @@
+<!-- Chris Bolt, added RSS feed link -->
+<p><a href="{$WEB_ROOT}/networkissuesrss.php"><i class="fa fa-rss icon-rss"></i> View RSS Feed</a></p>
+<!-- End Chris Bolt -->
+
 {foreach from=$issues item=issue}
 
     <div class="panel {if $issue.clientaffected}panel-warning{else}panel-info{/if}">
@@ -26,6 +30,10 @@
     <a href="{if $nextpage}{$smarty.server.PHP_SELF}?{if $view}view={$view}&amp;{/if}page={$nextpage}{else}#{/if}" class="btn btn-default {if !$nextpage}disabled{/if}">{$LANG.nextpage} &gt;</a>
 </div>
 
+<!-- Chris Bolt, data centre providers -->
+{include file="$template/bolt/includes/data-centre-status.tpl"}
+<!-- End Chris Bolt -->
+
 {if $servers}
 
     {include file="$template/includes/subheader.tpl" title=$LANG.serverstatustitle}
@@ -40,9 +48,11 @@
                     <th class="text-center">HTTP</th>
                     <th class="text-center">FTP</th>
                     <th class="text-center">POP3</th>
+                    <!-- Chris bolt removed these 
                     <th class="text-center">{$LANG.serverstatusphpinfo}</th>
                     <th class="text-center">{$LANG.serverstatusserverload}</th>
                     <th class="text-center">{$LANG.serverstatusuptime}</th>
+                    -->
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +67,7 @@
                         </td>
                         <td class="text-center" id="port110_{$num}">
                             <span class="fas fa-spinner fa-spin"></span>
+                        {* Chris bolt removed these
                         </td>
                         <td class="text-center"><a href="{$server.phpinfourl}" target="_blank">{$LANG.serverstatusphpinfo}</a></td>
                         <td class="text-center" id="load{$num}">
@@ -64,6 +75,7 @@
                         </td>
                         <td class="text-center" id="uptime{$num}">
                             <span class="fas fa-spinner fa-spin"></span>
+                            Chris Bolt remove end *}
                             <script>
                             jQuery(document).ready(function() {
                                 checkPort({$num}, 80);

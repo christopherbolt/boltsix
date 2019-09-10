@@ -56,9 +56,26 @@
                         <div class="small-text">
                             {$LANG.invoicesdatedue}: {$datedue}
                         </div>
+                        <!-- Chris Bolt, added payment change form here to make it really obvious how to choose a payment method!!! -->
+                        {if $status eq "Unpaid" && $allowchangegateway}
+                        <strong>CHOOSE PAYMENT METHOD:</strong><br>
+                        <span class="small-text">
+                                <form method="post" action="{$smarty.server.PHP_SELF}?id={$invoiceid}" class="form-inline">
+                                    {$gatewaydropdown}
+                                </form>
+                        </span>
+                        {/if}
+                        <!-- END CHRIS BOLT -->
                         <div class="payment-btn-container hidden-print" align="center">
                             {$paymentbutton}
                         </div>
+                        <!-- Chris Bolt, display international payment info if needed -->
+                        {if $clientsdetails.country != "New Zealand" && $paymentmethod == "Bank Transfer"}
+                        <div>We are in NEW ZEALAND<br>
+						<a href="https://www.christopherbolt.com/support/knowledgebase.php?action=displayarticle&id=17" target="_blank"><strong>Click here</strong></a> for international bank transfer information
+                        </div>
+                        {/if}
+                        <!-- END CHRIS BOLT -->
                     {/if}
 
                 </div>

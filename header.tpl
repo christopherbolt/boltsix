@@ -7,6 +7,10 @@
     <title>{if $kbarticle.title}{$kbarticle.title} - {/if}{$pagetitle} - {$companyname}</title>
 
     {include file="$template/includes/head.tpl"}
+    
+    <!-- Chris Bolt -->
+    {include file="$template/bolt/includes/head.tpl"}
+    <!-- End Chris Bolt -->
 
     {$headoutput}
 
@@ -16,6 +20,9 @@
 {$headeroutput}
 
 <section id="header">
+    <!-- Chris Bolt top bar -->
+    {include file="$template/bolt/includes/header.tpl"}
+    <!-- End Chris Bolt top bar -->
     <div class="container">
         <ul class="top-nav">
             {if $languagechangeenabled && count($locales) > 1}
@@ -91,7 +98,10 @@
         </ul>
 
         {if $assetLogoPath}
-            <a href="{$WEB_ROOT}/index.php" class="logo"><img src="{$assetLogoPath}" alt="{$companyname}"></a>
+            <!-- Chris Bolt, changed this to support retina (new SVG image) -->
+            <!--  <a href="{$WEB_ROOT}/index.php" class="logo"><img src="{$assetLogoPath}" alt="{$companyname}"></a> -->
+            <a href="{$WEB_ROOT}/index.php"><img src="{$WEB_ROOT}/templates/{$template}/bolt/img/cb-support-logo-bluebg.svg" width="306" alt="{$companyname}" /></a>
+     		<!-- End Chris Bolt -->
         {else}
             <a href="{$WEB_ROOT}/index.php" class="logo logo-text">{$companyname}</a>
         {/if}
@@ -135,6 +145,12 @@
 </section>
 
 {if $templatefile == 'homepage'}
+    
+    <!-- Chris Bolt knowledgebase search -->
+	{include file="$template/bolt/includes/homesearch.tpl"}
+	<!-- End Chris Bolt -->
+    
+    {* Chris Bolt, Remove the domain search
     <section id="home-banner">
         <div class="container text-center">
             {if $registerdomainenabled || $transferdomainenabled}
@@ -164,6 +180,7 @@
             {/if}
         </div>
     </section>
+    Chris bolt, end domain search removal *}
     <div class="home-shortcuts">
         <div class="container">
             <div class="row">
@@ -192,6 +209,16 @@
                                 </p>
                             </a>
                         </li>
+                        <!-- Chris Bolt changed this link and added new BoltMail link -->
+                        <li>
+                            <a id="btnOrderBoltmail" href="cart.php?gid=2">
+                                <i class="fa fa-envelope"></i>
+                                <p>
+                                    Order BoltMail<span>&raquo;</span>
+                                </p>
+                            </a>
+                        </li>
+                        <!-- End Chris Bolt -->
                         <li>
                             <a id="btnMakePayment" href="clientarea.php">
                                 <i class="fas fa-credit-card"></i>
@@ -236,3 +263,7 @@
             {if !$primarySidebar->hasChildren() && !$showingLoginPage && !$inShoppingCart && $templatefile != 'homepage' && !$skipMainBodyContainer}
                 {include file="$template/includes/pageheader.tpl" title=$displayTitle desc=$tagline showbreadcrumb=true}
             {/if}
+
+<!-- Chris Bolt Icon grid for homepage -->
+{include file="$template/bolt/includes/home.tpl"}
+<!-- End Chris Bolt -->

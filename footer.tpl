@@ -10,12 +10,18 @@
     </div>
 </section>
 
+{* Chris bolt removed original footer
 <section id="footer">
     <div class="container">
         <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
         <p>{lang key="copyrightFooterNotice" year=$date_year company=$companyname}</p>
     </div>
 </section>
+*}
+
+<!-- Chris Bolt footer2 -->
+{include file="$template/bolt/includes/footer2.tpl"}
+<!-- End Chris Bolt footer -->
 
 <div class="modal system-modal fade" id="modalAjax" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
