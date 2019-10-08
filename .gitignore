@@ -1,5 +1,5 @@
 # Ignore OS and application specific crap
 .DS_Store
-_notes/
+_notes
 dwsync.xml
 thumbs.db
