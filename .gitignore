@@ -1,0 +1,5 @@
+# Ignore OS and application specific crap
+.DS_Store
+_notes
+dwsync.xml
+thumbs.db
