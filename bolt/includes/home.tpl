@@ -39,16 +39,14 @@
     <strong><a href="knowledgebase.php">{$LANG.knowledgebasetitle}</a></strong><br />
       {$LANG.knowledgebasedescription}
    </li>
-    <li><a class="fa fa-life-ring" href="tutorials.php"></a> <strong><a href="tutorials.php">Tutorials</a></strong><br />
-View our tutorials </li>
 
 <li><a class="fa fa-rocket" href="serverstatus.php"></a>
     <strong><a href="serverstatus.php">Network Status</a></strong><br />
       {$LANG.serverstatusdescription}
   </li>
   
-  <li><a class="fa fa-envelope" href="contact.php"></a> <strong><a href="contact.php">Contact Us</a></strong><br />
-{$LANG.presalescontactdescription} </li>
+  {*<li><a class="fa fa-envelope" href="contact.php"></a> <strong><a href="contact.php">Contact Us</a></strong><br />
+{$LANG.presalescontactdescription} </li>*}
    
 </ul>
  {/if}  
