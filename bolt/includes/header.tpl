@@ -8,7 +8,7 @@
 			&nbsp; | &nbsp;
 			<a href="https://www.bolthost.co.nz" title="BoltHost for Web Hosting &amp; Domain Names">BoltHost</a>
 			&nbsp; | &nbsp;
-			<a href="https://www.boltmail.co.nz" title="BoltMail for Email Marketing Solutions">BoltMail</a>
+			<a href="https://www.boltmail.nz" title="BoltMail for Email Marketing Solutions">BoltMail</a>
 		</div>
         
         <div id="contact">

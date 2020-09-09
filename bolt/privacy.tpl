@@ -44,4 +44,4 @@ We will not hold your personal information for longer than is required for the p
 <p><strong>ACCESS AND CORRECTION</strong><br>
 We will take all reasonable steps to ensure that personal information held by us is accurate and up-to-date. You may view and/or update the information we hold about you at any time by logging into your account on our support portal or by contacting us.</p>
 <p><strong>EMAIL MARKETING</strong><br>
-For privacy issues relating to our email marketing service &quot;BoltMail&quot; please see <a href="https://www.boltmail.co.nz/about/privacy.html">https://www.boltmail.co.nz/about/privacy.html</a></p>
+For privacy issues relating to our email marketing service &quot;BoltMail&quot; please see <a href="https://www.boltmail.nz/privacy/">https://www.boltmail.nz/privacy/</a></p>

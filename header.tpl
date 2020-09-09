@@ -201,8 +201,9 @@
                                 </a>
                             </li>
                         {/if}
+						<!-- Chris Bolt added ?gid=1 to end of link -->
                         <li>
-                            <a id="btnOrderHosting" href="cart.php">
+                            <a id="btnOrderHosting" href="cart.php?gid=1">
                                 <i class="far fa-hdd"></i>
                                 <p>
                                     {$LANG.orderhosting} <span>&raquo;</span>
@@ -211,7 +212,7 @@
                         </li>
                         <!-- Chris Bolt changed this link and added new BoltMail link -->
                         <li>
-                            <a id="btnOrderBoltmail" href="cart.php?gid=2">
+                            <a id="btnOrderBoltmail" href="cart.php?gid=7">
                                 <i class="fa fa-envelope"></i>
                                 <p>
                                     Order BoltMail<span>&raquo;</span>

@@ -2,8 +2,8 @@
 
 <ul class="homeIcons">
   
-  <li><a class="fa fa-lock" href="https://www.boltmail.co.nz/boltmail/"></a>
-    <strong><a href="https://www.boltmail.co.nz/boltmail/">BoltMail Login</a></strong><br />
+  <li><a class="fa fa-lock" href="https://www.boltmail.nz/login/"></a>
+    <strong><a href="https://www.boltmail.nz/login/">BoltMail Login</a></strong><br />
       Login to your BoltMail Email Marketing
   </li>
   

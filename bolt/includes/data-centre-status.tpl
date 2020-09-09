@@ -1,7 +1,7 @@
 
 <h2>Data Centre Status</h2>
 <p>This shows the status of our data centre provider and upstream connectivity providers.</p>
-<p><a href="https://hd.net.nz/networkissuesrss.php"><i class="fa fa-rss icon-rss"></i> View RSS Feed</a></p>
+<p><a href="https://status.voyager.nz/history.rss"><i class="fa fa-rss icon-rss"></i> View RSS Feed</a></p>
 <div id="data-centre-status"><img src="{$WEB_ROOT}/templates/boltsix/img/loader.gif" alt=""/></div>
 <script>
 $.get('{$WEB_ROOT}/templates/boltsix/bolt/data-centre-rss.php', function (data) {

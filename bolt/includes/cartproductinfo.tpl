@@ -1,12 +1,13 @@
-{if $smarty.get.gid == 2}
+{if $smarty.get.gid == 2 || $smarty.get.gid == 7 || ! isset($smarty.get.gid)}
 	{* BoltMail *}
 		<h4>All the tools you need for successful email marketing</h4>
 		<p>
 			Manage your contact lists, send newsletters, invitations, promotions and more.<br>
-			For more information about BoltMail visit <a href="https://www.boltmail.co.nz">www.boltmail.co.nz</a>
+			For more information about BoltMail visit <a href="https://www.boltmail.nz">www.boltmail.nz</a>
 		</p>
+		<p><strong>Pricing starts from just $10 per month</strong></p>
 	</h5>
-{elseif $smarty.get.gid == 1 || ! isset($smarty.get.gid)}
+{elseif $smarty.get.gid == 1}
 	{* BoltHost *}
 		<h4>Ultra-fast &amp; reliable New Zealand web hosting</h4>
 		<p>

@@ -1,5 +1,5 @@
 <?php
-$url = 'https://hd.net.nz/networkissuesrss.php';
+$url = 'https://status.voyager.nz/history.rss';
 $ch = curl_init();
 $timeout = 5;
 curl_setopt($ch, CURLOPT_URL, $url);
