@@ -8,7 +8,7 @@
 </h3>
 
 <form id="frmManagePaymentMethod" class="form-horizontal frm-credit-card-input" role="form" method="post" action="{if $editMode}{routePath('account-paymentmethods-save', $payMethod->id)}{else}{routePath('account-paymentmethods-add')}{/if}">
-    <div class="alert alert-warning text-center gateway-errors assisted-cc-input-feedback hidden">
+    <div class="alert alert-warning text-center gateway-errors assisted-cc-input-feedback" style="display: none;">
         {$LANG.paymentMethodsManage.invalidCardDetails}
     </div>
 
@@ -398,6 +398,10 @@ jQuery(document).ready(function() {
                         jQuery('.fieldgroup-creditcard').removeClass('hidden').show('fast', function() {
                             jQuery('#tokenGatewayAssistedOutput').html(response.assistedOutput);
                         });
+                        jQuery('.fieldgroup-auxfields').show();
+                    } else if (response.gatewayType === 'Bank') {
+                        jQuery('.fieldgroup-loading').hide();
+                        jQuery('.fieldgroup-bankaccount').show();
                         jQuery('.fieldgroup-auxfields').show();
                     } else {
                         jQuery('.fieldgroup-creditcard').removeClass('hidden').show();

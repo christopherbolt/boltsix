@@ -106,7 +106,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-nav">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">{lang key='toggleNav'}</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -147,7 +147,7 @@
                                 <input type="text" class="form-control" name="domain" placeholder="{$LANG.exampledomain}" autocapitalize="none" data-toggle="tooltip" data-placement="left" data-trigger="manual" title="{lang key='orderForm.required'}" />
                                 <span class="input-group-btn">
                                     {if $registerdomainenabled}
-                                        <input type="submit" class="btn search{$captcha->getButtonClass($captchaForm)}" value="{$LANG.search}" />
+                                        <input type="submit" class="btn search{$captcha->getButtonClass($captchaForm)}" value="{$LANG.search}" id="btnDomainSearch" />
                                     {/if}
                                     {if $transferdomainenabled}
                                         <input type="submit" id="btnTransfer" class="btn transfer{$captcha->getButtonClass($captchaForm)}" value="{$LANG.domainstransfer}" />
@@ -215,6 +215,7 @@
     </div>
 {/if}
 
+{include file="$template/includes/validateuser.tpl"}
 {include file="$template/includes/verifyemail.tpl"}
 
 <section id="main-body">
