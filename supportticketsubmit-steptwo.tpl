@@ -7,7 +7,7 @@
     <div class="row">
         <div class="form-group col-sm-4">
             <label for="inputName">{$LANG.supportticketsclientname}</label>
-            <input type="text" name="name" id="inputName" value="{if $loggedin}{$clientname}{else}{$name}{/if}" class="form-control{if $loggedin} disabled{/if}"{if $loggedin} disabled="disabled"{/if} />
+            <input type="text" name="name" id="inputName" value="{$name}" class="form-control{if $loggedin} disabled{/if}"{if $loggedin} disabled="disabled"{/if} />
         </div>
         <div class="form-group col-sm-5">
             <label for="inputEmail">{$LANG.supportticketsclientemail}</label>
@@ -78,7 +78,7 @@
             </button>
         </div>
         <div class="col-xs-12 ticket-attachments-message text-muted">
-            {$LANG.supportticketsallowedextensions}: {$allowedfiletypes}
+            {$LANG.supportticketsallowedextensions}: {$allowedfiletypes} ({lang key="maxFileSize" fileSize="$uploadMaxFileSize"})
         </div>
     </div>
 
