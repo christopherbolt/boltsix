@@ -7,6 +7,9 @@
 
 jQuery(document).ready(function() {
 
+    // Init Lightbox2
+    lightbox.init();
+
     // Language chooser popover
     jQuery('#languageChooser').popover({
         container: 'body',
@@ -315,15 +318,16 @@ jQuery(document).ready(function() {
         }
 
         button.attr('disabled', 'disabled').addClass('disabled');
-        button.find('.loading').removeClass('hidden').show().end();
+        jQuery('.loading', button).removeClass('hidden').show().end();
+        jQuery('.login-feedback', form).slideUp();
         WHMCS.http.jqClient.post(
             url,
             form.serialize(),
             function (data) {
-                button.find('.loading').hide().end().removeAttr('disabled');
-                form.find('.login-feedback').html('');
+                jQuery('.loading', button).hide().end().removeAttr('disabled');
+                jQuery('.login-feedback', form).html('');
                 if (data.error) {
-                    form.find('.login-feedback').html(data.error).hide().removeClass('hidden').slideDown();
+                    jQuery('.login-feedback', form).hide().html(data.error).slideDown();
                 }
                 if (data.redirect !== undefined && data.redirect.substr(0, 7) === 'window|') {
                     window.open(data.redirect.substr(7), '_blank');
@@ -332,7 +336,7 @@ jQuery(document).ready(function() {
             'json'
         ).always(function() {
             button.removeAttr('disabled').removeClass('disabled');
-            button.find('.loading').hide().end();
+            jQuery('.loading', button).hide().end();
         });
     });
     jQuery('.btn-sidebar-form-submit').on('click', function(e) {
@@ -451,9 +455,9 @@ jQuery(document).ready(function() {
                     parsedContent;
 
                 jQuery.ajax({
-                    url: 'clientarea.php',
+                    url: WHMCS.utils.getRouteUrl('/clientarea/message/preview'),
                     async: false,
-                    data: {token: csrfToken, action: 'parseMarkdown', content: originalContent},
+                    data: {token: csrfToken, content: originalContent},
                     dataType: 'json',
                     success: function (data) {
                         parsedContent = data;
@@ -813,6 +817,73 @@ jQuery(document).ready(function() {
             }
         );
         confirmationModal.modal('toggle');
+    });
+    jQuery('input[name="approval_method"]').on('ifChecked', function(event) {
+        var fileMethod = $('#containerApprovalMethodFile'),
+            emailMethod = $('#containerApprovalMethodEmail'),
+            dnsMethod = $('#containerApprovalMethodDns');
+        if (jQuery(this).attr('value') == 'file') {
+            fileMethod.show();
+            dnsMethod.hide();
+            emailMethod.hide();
+        } else if (jQuery(this).attr('value') == 'dns-txt-token') {
+            dnsMethod.show();
+            fileMethod.hide();
+            emailMethod.hide();
+        } else {
+            fileMethod.hide();
+            dnsMethod.hide();
+            emailMethod.show();
+        }
+    });
+
+    (function () {
+        jQuery('.div-service-status').css(
+            'width',
+            (jQuery('.div-service-status .label-placeholder').outerWidth() + 5)
+        );
+    }());
+    jQuery('.div-service-item').on('click', function (event) {
+        var element = jQuery(event.target);
+        if (element.is('.dropdown-toggle, .dropdown-menu, .caret')) {
+            return true;
+        }
+        if (element.hasClass('btn-custom-action')) {
+            event.stopPropagation();
+            if (!element.data('active')) {
+                return false;
+            }
+            element.attr('disabled', 'disabled').addClass('disabled');
+            jQuery('.loading', element).show();
+            WHMCS.http.jqClient.jsonPost({
+                url: WHMCS.utils.getRouteUrl(
+                    '/clientarea/service/' + element.data('serviceid') + '/custom-action/' + element.data('identifier')
+                ),
+                data: {
+                    'token': csrfToken
+                },
+                success: function(data) {
+                    if (data.success) {
+                        window.open(data.redirectTo);
+                    } else {
+                        window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_error=1');
+                    }
+                },
+                fail: function () {
+                    window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
+                },
+                always: function() {
+                    jQuery('.loading', element).hide();
+                    element.removeAttr('disabled').removeClass('disabled');
+                    if (element.hasClass('dropdown-item')) {
+                        element.closest('.dropdown-menu').removeClass('show');
+                    }
+                },
+            });
+            return true;
+        }
+        window.location.href = element.closest('.div-service-item').data('href');
+        return false;
     });
 });
 
