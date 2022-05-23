@@ -203,7 +203,7 @@
                         {/if}
 						<!-- Chris Bolt added ?gid=1 to end of link -->
                         <li>
-                            <a id="btnOrderHosting" href="cart.php?gid=1">
+                            <a id="btnOrderHosting" href="{$WEB_ROOT}/cart.php?gid=1">
                                 <i class="far fa-hdd"></i>
                                 <p>
                                     {$LANG.orderhosting} <span>&raquo;</span>
