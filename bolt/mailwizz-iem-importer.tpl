@@ -99,7 +99,7 @@
 </div>
 </section-->
 
-<h2>Purchase Now for just $79 NZD</h2>
+<h2>Purchase Now for just $30 NZD</h2>
 <p><a href="{$WEB_ROOT}/cart.php?a=add&pid=42" class="btn btn-lg btn-success">Purchase Now</a></p>
 
 <hr>                

@@ -12,7 +12,7 @@
 		</div>
         
         <div id="contact">
-			<i class="fa fa-phone"></i> <a href="mailto:+64 9 950 3348">+64 9 950 3348</a>
+			<i class="fa fa-phone"></i> <a href="mailto:+64 21 267 3758">+64 21 267 3758</a>
 			&nbsp;&nbsp; 
 			<i class="fa fa-at"></i>
 			<script type="text/javascript">document.write('<a'+' h'+'re'+'f='+'"m'+'ai'+'lt'+'o:'+'ch'+'ri'+'s@'+'ch'+'ri'+'st'+'op'+'he'+'rb'+'ol'+'t.c'+'om'+'">'+'ch'+'ri'+'s@'+'ch'+'ri'+'st'+'op'+'he'+'rb'+'olt'+'.c'+'om'+'</'+'a>');</script>

@@ -27,5 +27,5 @@
 
 
 <p>
-PO Box 8014 Symonds Street Auckland 1150<br>
-+64 9 950 3348 <a href="mailto:chris@christopherbolt.com">chris@christopherbolt.com</a></p>
+PO Box 355 New Plymouth 4340<br>
++64 21 267 3758 <a href="mailto:chris@christopherbolt.com">chris@christopherbolt.com</a></p>

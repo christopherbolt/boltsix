@@ -1,4 +1,4 @@
-{if $smarty.get.gid == 2 || $smarty.get.gid == 7 || ! isset($smarty.get.gid)}
+{if $productGroup.id == 2 || $productGroup.id == 7}
 	{* BoltMail *}
 		<h4>All the tools you need for successful email marketing</h4>
 		<p>
@@ -7,7 +7,7 @@
 		</p>
 		<p><strong>Pricing starts from just $10 per month</strong></p>
 	</h5>
-{elseif $smarty.get.gid == 1}
+{elseif $productGroup.id == 1}
 	{* BoltHost *}
 		<h4>Ultra-fast &amp; reliable New Zealand web hosting</h4>
 		<p>
