@@ -14926,10 +14926,13 @@ toolTip: function () {
         return tip;
     };
 
-    this.hideTip = function (btn) {
+    this.hideTip = function (btn, timeout) {
+        if (!timeout) {
+            timeout = 2000;
+        }
         return setTimeout(function() {
             btn.data('bs.tooltip').hide()
-        }, 2000);
+        }, timeout);
     }
 },
 
@@ -16696,6 +16699,11 @@ jQuery(document).ready(function() {
         jQuery('.verification-banner.user-validation').hide();
     });
 
+    var ssoDropdown = jQuery('#servicesPanel').find('.list-group');
+    if (parseInt(ssoDropdown.css('height'), 10) < parseInt(ssoDropdown.css('max-height'), 10)) {
+        ssoDropdown.css('overflow', 'unset');
+    }
+
 
     /**
      * Parse the content to populate the markdown editor footer.
@@ -17000,45 +17008,33 @@ jQuery(document).ready(function() {
             'width',
             (jQuery('.div-service-status .label-placeholder').outerWidth() + 5)
         );
+        jQuery('div[menuitemname="Active Products/Services"] .list-group-item:visible')
+            .last()
+            .css('border-bottom', '1px solid #ddd');
     }());
+    jQuery('div[menuitemname="Active Products/Services"] .btn-view-more').on('click', function(event) {
+        var hiddenItems = jQuery('div[menuitemname="Active Products/Services"] .list-group-item:hidden');
+        var itemAmount = 8;
+        event.preventDefault();
+        hiddenItems.slice(0,itemAmount).css('display', 'block');
+        if ((hiddenItems.length - itemAmount) <= 0) {
+            jQuery(event.target).addClass('disabled').attr("aria-disabled", true);
+        }
+        jQuery('div[menuitemname="Active Products/Services"] .list-group-item:visible')
+            .css('border-bottom', '')
+            .last()
+            .css('border-bottom', '1px solid #ddd');
+    })
+    jQuery('div[menuitemname="Service Details Actions"] a[data-identifier][data-serviceid][data-active="1"]').on('click', function(event) {
+        return customActionAjaxCall(event, jQuery(event.target))
+    });
     jQuery('.div-service-item').on('click', function (event) {
         var element = jQuery(event.target);
         if (element.is('.dropdown-toggle, .dropdown-menu, .caret')) {
             return true;
         }
         if (element.hasClass('btn-custom-action')) {
-            event.stopPropagation();
-            if (!element.data('active')) {
-                return false;
-            }
-            element.attr('disabled', 'disabled').addClass('disabled');
-            jQuery('.loading', element).show();
-            WHMCS.http.jqClient.jsonPost({
-                url: WHMCS.utils.getRouteUrl(
-                    '/clientarea/service/' + element.data('serviceid') + '/custom-action/' + element.data('identifier')
-                ),
-                data: {
-                    'token': csrfToken
-                },
-                success: function(data) {
-                    if (data.success) {
-                        window.open(data.redirectTo);
-                    } else {
-                        window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_error=1');
-                    }
-                },
-                fail: function () {
-                    window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
-                },
-                always: function() {
-                    jQuery('.loading', element).hide();
-                    element.removeAttr('disabled').removeClass('disabled');
-                    if (element.hasClass('dropdown-item')) {
-                        element.closest('.dropdown-menu').removeClass('show');
-                    }
-                },
-            });
-            return true;
+            return customActionAjaxCall(event, element);
         }
         window.location.href = element.closest('.div-service-item').data('href');
         return false;
@@ -17439,6 +17435,48 @@ function completeValidationComClientWorkflow()
         window.location.href = WHMCS.utils.autoDetermineBaseUrl();
     }
     return false;
+}
+
+/**
+ * Perform the AjaxCall for a CustomAction.
+ *
+ * @param event
+ * @param element
+ * @returns {boolean}
+ */
+function customActionAjaxCall(event, element) {
+    event.stopPropagation();
+    if (!element.data('active')) {
+        return false;
+    }
+    element.attr('disabled', 'disabled').addClass('disabled');
+    jQuery('.loading', element).show();
+    WHMCS.http.jqClient.jsonPost({
+        url: WHMCS.utils.getRouteUrl(
+            '/clientarea/service/' + element.data('serviceid') + '/custom-action/' + element.data('identifier')
+        ),
+        data: {
+            'token': csrfToken
+        },
+        success: function(data) {
+            if (data.success) {
+                window.open(data.redirectTo);
+            } else {
+                window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_error=1');
+            }
+        },
+        fail: function () {
+            window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
+        },
+        always: function() {
+            jQuery('.loading', element).hide();
+            element.removeAttr('disabled').removeClass('disabled');
+            if (element.hasClass('dropdown-item')) {
+                element.closest('.dropdown-menu').removeClass('show');
+            }
+        },
+    });
+    return true;
 }
 
 /*!
@@ -40555,7 +40593,7 @@ jQuery(document).ready(function() {
                     initialCountry = 'us';
                 }
 
-                thisInput.before('<input id="populated' + inputName + 'CountryCode" type="hidden" name="contactdetails[' + inputName + '][Phone Country Code]" value="" />');
+                thisInput.before('<input id="populated' + inputName + 'CountryCode" class="' + inputName + 'customwhois" type="hidden" name="contactdetails[' + inputName + '][Phone Country Code]" value="" />');
                 thisInput.intlTelInput({
                     preferredCountries: [initialCountry, "us", "gb"].filter(function(value, index, self) {
                         return self.indexOf(value) === index;
