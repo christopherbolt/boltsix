@@ -40,7 +40,11 @@
   <li>Click 'Add New Server' and for Module choose MailWizz</li>
   <li>Copy and paste the Hostname and Access Hash from the WHMCS Connector Extension settings screen in MailWizz. Leave the Username and Password empty. </li>
 </ul>
-<p>3. Configure some products in WHMCS
+<p>3. Create customer groups in MailWizz</p>
+<ul>
+  <li>Create a Customer Group in MailWizz for each package that you want to sell, each customer group can have it\'s own sending limits and other restrictions.</li>
+</ul>
+<p>4. Configure some products in WHMCS
 </p>
 <ul>
   <li>Log into WHMCS and navigate to Setup -&gt; Products/Services -&gt; Products/Services</li>
