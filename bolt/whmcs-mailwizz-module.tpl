@@ -42,7 +42,7 @@
 </ul>
 <p>3. Create customer groups in MailWizz</p>
 <ul>
-  <li>Create a Customer Group in MailWizz for each package that you want to sell, each customer group can have it\'s own sending limits and other restrictions.</li>
+  <li>Create a Customer Group in MailWizz for each package that you want to sell, each customer group can have it's own sending limits and other restrictions.</li>
 </ul>
 <p>4. Configure some products in WHMCS
 </p>
