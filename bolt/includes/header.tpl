@@ -6,7 +6,7 @@
 			&nbsp;&nbsp; 
 			<a href="https://www.christopherbolt.com" title="ChristopherBolt.Com Limited">ChristopherBolt.Com</a>
 			&nbsp; | &nbsp;
-			<a href="https://www.bolthost.co.nz" title="BoltHost for Web Hosting &amp; Domain Names">BoltHost</a>
+			<a href="https://www.bolthost.nz" title="BoltHost for Web Hosting &amp; Domain Names">BoltHost</a>
 			&nbsp; | &nbsp;
 			<a href="https://www.boltmail.nz" title="BoltMail for Email Marketing Solutions">BoltMail</a>
 		</div>

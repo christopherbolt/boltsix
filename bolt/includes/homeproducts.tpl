@@ -11,7 +11,7 @@
     <h2>Web Hosting</h2>
     <h3>BoltHost</h3>
     <p class="desc">Fast and reliable New Zealand web hosting.</p>
-    <p><a href="https://www.bolthost.co.nz" class="infoLink">Learn More</a></p>
+    <p><a href="https://www.bolthost.nz" class="infoLink">Learn More</a></p>
     </div>
     
     <div class="prodBox">

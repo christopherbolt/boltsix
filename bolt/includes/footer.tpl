@@ -19,7 +19,7 @@
 </div>
 <div id="cbfooter">
 <p><a href="https://www.christopherbolt.com" target="_blank"><img src="{$WEB_ROOT}/templates/{$template}/bolt/img/christopherbolt.gif" alt="ChristopherBolt.Com" width="299" height="28" border="0" /></a></p>
-<p><a href="https://www.christopherbolt.com">Web Development</a> | <a href="https://www.bolthost.co.nz">Web Hosting</a> | <a href="https://www.boltmail.nz">Email Marketing</a></p>
+<p><a href="https://www.christopherbolt.com">Web Development</a> | <a href="https://www.bolthost.nz">Web Hosting</a> | <a href="https://www.boltmail.nz">Email Marketing</a></p>
 <p>BoltHost and BoltMail are divisions of ChristopherBolt.Com Limited</p>
 <p>100% New Zealand Owned and Operated. All servers located in New Zealand.</p>
 <p><a href="https://www.christopherbolt.com/terms.pdf" target="_blank">Terms of Service</a> [PDF] | <a href="https://www.christopherbolt.com/support/privacy.php">Privacy Policy</a></p>

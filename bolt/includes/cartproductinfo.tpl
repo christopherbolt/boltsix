@@ -7,12 +7,12 @@
 		</p>
 		<p><strong>Pricing starts from just $10 per month</strong></p>
 	</h5>
-{elseif $productGroup.id == 1}
+{elseif $productGroup.id == 1 || $productGroup.id == 8}
 	{* BoltHost *}
 		<h4>Ultra-fast &amp; reliable New Zealand web hosting</h4>
 		<p>
 			We don't overload our servers so you get better performance and reliability<br>
-			For more information about BoltHost visit <a href="https://www.bolthost.co.nz">www.bolthost.co.nz</a></h5>
+			For more information about BoltHost visit <a href="https://www.bolthost.nz">www.bolthost.nz</a></h5>
 		</p>
 		<p class="alert alert-warning" style="margin: 1em 0 !important"><i class="fa fa-percent"></i> Get a 20% discount when paying annually. You can choose your billing cycle during checkout.</a></p>
 {/if}
