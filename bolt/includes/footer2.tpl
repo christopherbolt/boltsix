@@ -14,7 +14,7 @@ When paying by Credit Card your account will be charged in NZD.</p>
                 <div class="container">
                     <div class="row justify-content-center text-center mb-2">
                         <div class="col-12 col-lg-6">
-                            <p class="mb-1"><img class="footer-logo" alt="ChristopherBolt.Com" src="{$WEB_ROOT}/templates/{$template}/bolt/img/cb-logo-bluebg.svg" /></p>
+                            <p class="mb-1"><a href="https://www.christopherbolt.com"><img class="footer-logo" alt="ChristopherBolt.Com" src="{$WEB_ROOT}/templates/{$template}/bolt/img/cb-logo-bluebg.svg" /></a></p>
                             <p class="text-muted  mb-0 footer-services">
                                 <a href="mailto:chris@christopherbolt.com">Web Development</a>
                                 <a href="https://www.bolthost.nz">Web Hosting</a>

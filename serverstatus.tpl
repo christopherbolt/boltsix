@@ -30,10 +30,6 @@
     <a href="{if $nextpage}{$smarty.server.PHP_SELF}?{if $view}view={$view}&amp;{/if}page={$nextpage}{else}#{/if}" class="btn btn-default {if !$nextpage}disabled{/if}">{$LANG.nextpage} &gt;</a>
 </div>
 
-<!-- Chris Bolt, data centre providers -->
-{include file="$template/bolt/includes/data-centre-status.tpl"}
-<!-- End Chris Bolt -->
-
 {if $servers}
 
     {include file="$template/includes/subheader.tpl" title=$LANG.serverstatustitle}
@@ -96,3 +92,7 @@
     </div>
 
 {/if}
+
+<!-- Chris Bolt, data centre providers -->
+{include file="$template/bolt/includes/data-centre-status.tpl"}
+<!-- End Chris Bolt -->
