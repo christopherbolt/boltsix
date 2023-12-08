@@ -1,10 +1,8 @@
 // Clickjacking defense
 document.write('<style id="antiClickjack">body{display:none !important;}</style>');
-if (self === top) {
+if (self === top && /(christopherbolt\.com|boltdevserver\.local)$/.test(window.location.hostname)) {
     var antiClickjack = document.getElementById("antiClickjack");
     antiClickjack.parentNode.removeChild(antiClickjack);
-} else {
-    top.location = self.location;
 }
 
 // JavaScript Document
