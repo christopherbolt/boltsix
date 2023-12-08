@@ -20,8 +20,8 @@
 </ul>
 <h3>Requirements</h3>
 <ul>
-  <li>A working MailWizz 1.5.7 or newer installation</li>
-  <li>A working WHMCS 7.8 or newer installation</li>
+  <li>A working MailWizz 2.0.0 or newer installation</li>
+  <li>A working WHMCS 8.6 or newer installation</li>
 </ul>
 <h3>Install</h3>
 <p>Please backup WHMCS and MailWizz before proceeding, including all files and databases</p>

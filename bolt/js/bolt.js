@@ -1,3 +1,12 @@
+// Clickjacking defense
+document.write('<style id="antiClickjack">body{display:none !important;}</style>');
+if (self === top) {
+    var antiClickjack = document.getElementById("antiClickjack");
+    antiClickjack.parentNode.removeChild(antiClickjack);
+} else {
+    top.location = self.location;
+}
+
 // JavaScript Document
 (function ( $ ) {
 	
