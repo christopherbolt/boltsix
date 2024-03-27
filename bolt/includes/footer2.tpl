@@ -35,7 +35,7 @@ When paying by Credit Card your account will be charged in NZD.</p>
 							<p class="text-muted small">
 								<i class="fa fa-phone"></i> <a href="tel:+64 21 267 3758">+64 21 267 3758</a><br>
 								<i class="fa fa-at"></i> <a href="mailto:chris@christopherbolt.com">chris@christopherbolt.com</a><br>
-                                Manifold, 21 Devon Street West, New Plymouth<br>
+                                <!--Manifold, 21 Devon Street West, New Plymouth<br>-->
 								PO Box 355, New Plymouth 4340, New Zealand</p>
                         </div>
                         <div class="col-12 col-lg-4 col-md-4 col-sm-4 pb-2 text-right located-nz">

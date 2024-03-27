@@ -82,11 +82,21 @@ ul.top-nav>li.primary-action {
 #boltheader {
 	position: relative;
 	font-size: 11px;
-	background-color: #f8f9fa;
-}
-#boltheader {
+	background-color: #343a40;
+	color: #9fc3da;
 	padding: 12px 0 0 0;
-	color: #6794b2;
+}
+#boltheader a {
+	color: #fff;
+}
+#toplinks {
+	float: left;
+	text-transform: uppercase;
+	font-size: 11px;
+	margin-bottom: 12px;
+}
+#toplinks a {
+	color: #9fc3da;
 }
 #contact {
 	/*position: absolute;
@@ -95,13 +105,6 @@ ul.top-nav>li.primary-action {
 	width: 400px;
 	font-size: 11px;*/
 	float: right;
-	margin-bottom: 12px;
-}
-#toplinks {
-	float: left;
-	text-transform: uppercase;
-	font-size: 11px;
-	color: #555;
 	margin-bottom: 12px;
 }
 .clear {
