@@ -16481,7 +16481,7 @@ function () {
         if (typeof window.whmcsBaseUrl === 'undefined') {
             console.log('Warning: The WHMCS Base URL definition is missing '
                 + 'from your active template. Please refer to '
-                + 'https://go.whmcs.com/1961/base-url '
+                + 'https://docs.whmcs.com/WHMCS_Base_URL_Template_Variable '
                 + 'for more information and details of how to resolve this '
                 + 'warning.');
             window.whmcsBaseUrl = this.autoDetermineBaseUrl();
@@ -40905,25 +40905,6 @@ v("intlTelInputUtils.numberType",{FIXED_LINE:0,MOBILE:1,FIXED_LINE_OR_MOBILE:2,T
  */
 
 jQuery(document).ready(function() {
-    const telephoneSharedCountries = new Map([
-        ['um', 'us'], // United States Outlying Islands shares dialing code with the US
-        ['ic', 'es'], // Canary Islands shares dialing code with Spain
-        ['gs', 'fk'], // South Georgia and Sandwich Islands shares dialing code with Falkland Islands
-        ['aq', 'nf'], // Antarctica shares dialing code with Norfolk Island
-        ['tf', 're'], // French Southern Territories shares dialing code with Réunion (La Réunion)
-        ['hm', 'nf'], // Heard Island and Mcdonald Islands shares dialing code with Norfolk Island
-        ['an', 'bq'], // Netherlands Antilles shares dialing code with Caribbean Netherlands
-        ['pn', 'nz'], // Pitcairn shares dialing code with New Zealand
-    ]);
-
-    function assertTelephoneCountry(country) {
-        country = country.toLowerCase();
-        if (telephoneSharedCountries.has(country)) {
-            return telephoneSharedCountries.get(country);
-        }
-        return country;
-    }
-
     if (typeof customCountryData !== "undefined") {
         var teleCountryData = $.fn['intlTelInput'].getCountryData();
         for (var code in customCountryData) {
@@ -40958,7 +40939,10 @@ jQuery(document).ready(function() {
             var countryInput = jQuery('[name^="country"], [name$="country"]'),
                 initialCountry = 'us';
             if (countryInput.length) {
-                initialCountry = assertTelephoneCountry(countryInput.val());
+                initialCountry = countryInput.val().toLowerCase();
+                if (initialCountry === 'um') {
+                    initialCountry = 'us';
+                }
             }
 
             phoneInput.each(function(){
@@ -40970,19 +40954,14 @@ jQuery(document).ready(function() {
                 jQuery(this).before(
                     '<input id="populatedCountryCode' + inputName + '" type="hidden" name="country-calling-code-' + inputName + '" value="" />'
                 );
-                try {
-                    thisInput.intlTelInput({
-                        preferredCountries: [initialCountry, "us", "gb"].filter(function (value, index, self) {
-                            return self.indexOf(value) === index;
-                        }),
-                        initialCountry: initialCountry,
-                        autoPlaceholder: 'polite', //always show the helper placeholder
-                        separateDialCode: true
-                    });
-                } catch (error) {
-                    console.log(error.message);
-                    return false;
-                }
+                thisInput.intlTelInput({
+                    preferredCountries: [initialCountry, "us", "gb"].filter(function(value, index, self) {
+                        return self.indexOf(value) === index;
+                    }),
+                    initialCountry: initialCountry,
+                    autoPlaceholder: 'polite', //always show the helper placeholder
+                    separateDialCode: true
+                });
 
                 thisInput.on('countrychange', function (e, countryData) {
                     jQuery('#populatedCountryCode' + inputName).val(countryData.dialCode);
@@ -41006,13 +40985,11 @@ jQuery(document).ready(function() {
 
                 countryInput.on('change', function() {
                     if (thisInput.val() === '') {
-                        var country = assertTelephoneCountry(jQuery(this).val());
-                        try {
-                            phoneInput.intlTelInput('setCountry', country);
-                        } catch (error) {
-                            console.log(error.message);
-                            return false;
+                        var country = jQuery(this).val().toLowerCase();
+                        if (country === 'um') {
+                            country = 'us';
                         }
+                        phoneInput.intlTelInput('setCountry', country);
                     }
                 });
 
@@ -41061,7 +41038,10 @@ jQuery(document).ready(function() {
                 inputName = inputName.replace('contactdetails[', '').replace('][Phone Number]', '').replace('][Phone]', '');
 
                 var countryInput = jQuery('[name$="' + inputName + '][Country]"]'),
-                    initialCountry = assertTelephoneCountry(countryInput.val());
+                    initialCountry = countryInput.val().toLowerCase();
+                if (initialCountry === 'um') {
+                    initialCountry = 'us';
+                }
 
                 thisInput.before('<input id="populated' + inputName + 'CountryCode" class="' + inputName + 'customwhois" type="hidden" name="contactdetails[' + inputName + '][Phone Country Code]" value="" />');
                 thisInput.intlTelInput({
@@ -41095,7 +41075,10 @@ jQuery(document).ready(function() {
 
                 countryInput.on('blur', function() {
                     if (thisInput.val() === '') {
-                        var country = assertTelephoneCountry(jQuery(this).val());
+                        var country = jQuery(this).val().toLowerCase();
+                        if (country === 'um') {
+                            country = 'us';
+                        }
                         thisInput.intlTelInput('setCountry', country);
                     }
                 });
