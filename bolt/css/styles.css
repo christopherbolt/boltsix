@@ -464,3 +464,13 @@ p.footer-services {
 	width: 96px;
 	text-align: right;
 }
+
+/* Mobile Fixes */
+.featured-tlds-container {
+	display: none;
+}
+@media (max-width: 1199px) {
+	.sidebar-collapsed {
+		display: none;
+	}
+}

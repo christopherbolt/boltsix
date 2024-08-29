@@ -50,7 +50,7 @@ When paying by Credit Card your account will be charged in NZD.</p>
 					<div class="row justify-content-center text-center">
 						<div>
 							<p class="text-muted small footer-legal">
-								<a href="https://www.christopherbolt.com/terms.pdf">Anti Spam Policy & Terms of Use</a><a href="https://www.christopherbolt.com/support/privacy.php">Privacy Policy</a>
+								<a href="https://www.christopherbolt.com/terms/">Anti Spam Policy & Terms of Use</a><a href="https://www.christopherbolt.com/privacy/">Privacy Policy</a>
 							</p>
 						</div>
 					</div>
