@@ -26,10 +26,13 @@ h1,div.header-lined h1 {
 .panel-sidebar .panel-title {
 	font-weight: normal;
 }
+strong {
+	font-weight: 500;
+}
 
 /* New default font size */
 .main-content, .main-content blockquote {
-	font-size: 14px;	
+	font-size: 16px;
 }
 /*.sidebar {
 	font-size: 16px;	
