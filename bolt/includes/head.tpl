@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500" rel="stylesheet">
 <link href="{$WEB_ROOT}/templates/{$template}/bolt/css/styles.css" rel="stylesheet">
 <script src="{$WEB_ROOT}/templates/{$template}/bolt/js/bolt.js"></script>
 
