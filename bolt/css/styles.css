@@ -240,7 +240,6 @@ ul.homeIcons li a.fa {
 		float: left;	
 		width: 86px;
 		text-align: center;
-		padding-bottom: 5px;
 	}
 }
 @media (max-width: 769px) {
@@ -250,6 +249,7 @@ ul.homeIcons li a.fa {
 	}
 	ul.homeIcons li a.fa {
 		font-size: 50px;
+		padding-bottom: 5px;
 	}
 }
 
