@@ -29,6 +29,9 @@ h1,div.header-lined h1 {
 strong, .announcement-single .title {
 	font-weight: 500;
 }
+.kb-articles a {
+	font-weight: normal;
+}
 
 /* New default font size */
 .main-content, .main-content blockquote {
