@@ -35,6 +35,9 @@ strong, .announcement-single .title {
 .kbarticles a {
 	font-weight: normal;
 }
+.navbar-main .dropdown-menu {
+	padding: 10px 0;
+}
 
 /* New default font size */
 .main-content, .main-content blockquote {
