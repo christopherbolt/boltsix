@@ -277,7 +277,7 @@ section#home-banner:before {
 	height: 100%;
 	position: absolute;
 	top: 0;
-	left 0;
+	left: 0;
 	/*background: rgba(4,61,95,.25);
 	background: rgba(52,58,64,.25);*/
 }
