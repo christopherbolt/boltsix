@@ -9,6 +9,8 @@ if (self === top && /(christopherbolt\.com|boltdevserver\.local)$/.test(window.l
 (function ( $ ) {
 	
 	$(document).ready(function() {
+
+		$('form#frmCheckout #btnExistingLogin').after('<span> <a href="/support/password/reset" class="btn btn-default btn-md">Forgot Password?</a></span>');
 		
 		$('form#frmCheckout input#accepttos').parents('.text-center').prepend('<p><strong>You must not use these services to send spam, unsolicted electronic messages or for any illegal purpose.<br> You must comply with the Unsolicited Electronic Messages Act, the Privacy Act and all other applicable laws.</strong></p><p>We take the security of our services seriously, all orders are manually reviewed, you do not need to do anything, but please allow a couple of hours for account activation.<br>If you choose to pay by Bank Transfer your services will not be activated until payment has cleared.</p>');
 		
